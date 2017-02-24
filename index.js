@@ -1,5 +1,5 @@
 "use strict";
-const slackbot = require('slackbots');
+const Slackbot = require('slackbots');
 const AWS = require('aws-sdk');
 
 const encrypted = process.env['slack_token'];
@@ -34,7 +34,7 @@ exports.handler = (event, context, callback) => {
 };
 
 function processEvent(event, context, callback) {
-    var edwin = new slackbot({
+    var edwin = new Slackbot({
         token: decrypted,  //your decrypted slack token will be used here
         name: 'YOUR_BOT_NAME'
     });
